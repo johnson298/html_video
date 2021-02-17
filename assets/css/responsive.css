@@ -1,0 +1,94 @@
+@media (max-width: 556px) {
+    .card-book .title {
+        font-size: 14px;
+    }
+
+    .page-link {
+        font-size: 12px;
+    }
+    .list-cate__item span {
+        font-size: 14px;
+    }
+
+    .list-cate__item {
+        padding: 5px;
+    }
+
+    .list-cate__item span:before {
+        top: 29px;
+    }
+
+    .header-top {
+        display: none;
+    }
+
+    .header-bottom {
+        height: 45px;
+    }
+
+    .report-list {
+        margin: 0;
+    }
+    .action-head {
+        display: flex;
+    }
+    .payment-methods .card-payment {
+        flex-wrap: wrap;
+    }
+    .card-payment .form-check {
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+    .card-info .form-container {
+        margin-top: 20px;
+    }
+    .card-info .payment-title h1 {
+        font-size: 20px;
+    }
+    .message__title {
+        font-size: 20px;
+    }
+
+    .message {
+        padding: 0;
+        margin-bottom: 25px;
+    }
+
+    .message__button {
+        width: 100%;
+        font-size: 14px;
+        height: auto;
+        max-width: initial;
+        padding: 10px 5px;
+    }
+    .grid-news-top {
+        display: block;
+    }
+
+    .grid-news-top > .box-news:nth-child(2) .content-book .title, .grid-news-top > .box-news:nth-child(3) .content-book .title, .banner-main .content-book .title {
+        font-size: 16px;
+    }
+
+    .banner-main .box-news {
+        margin-bottom: 10px;
+    }
+
+    .more-dusu {
+        margin-bottom: 20px;
+    }
+    .more-dusu h6 {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .more-dusu .more-view {
+        margin: 20px;
+    }
+
+    .title-about {
+        font-size: 24px !important;
+    }
+    .acc-item {
+        font-size: 14px;
+    }
+}
