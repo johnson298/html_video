@@ -18,12 +18,22 @@
     <div class="navbar box-shadow">
         <div class="container d-flex justify-content-between">
             <a href="#" class="navbar-brand d-flex align-items-center">
-                <strong class="mr-2"><i class="fas fa-download"></i></strong>
-                <strong>VIDEO DOWNLOADER</strong>
+                <div class="logo d-md-none"><img src="./assets/images/download-icon.png" alt=""></div>
+                <strong class="d-md-block d-none">VIDEO DOWNLOADER</strong>
             </a>
             <div class="menu-more">
                 <a href="" class="nav-link">Contact</a>
-                <a href="" class="nav-link"><span><i class="fas fa-globe"></i></span> LANGUAGE</a>
+                <div href=""  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="position-relative">
+                        <a href="" class="nav-link"><i class="fas fa-globe"></i> LANGUAGE</a>
+                        <div class="dropdown-menu country-flag">
+                            <a class="dropdown-item" href="#"><img src="./assets/images/flag/vn.png" alt=""> vietnamese</a>
+                            <a class="dropdown-item" href="#"><img src="./assets/images/flag/my.png" alt=""> myanmar</a>
+                            <a class="dropdown-item" href="#"><img src="./assets/images/flag/uk.png" alt=""> united kingdom</a>
+                            <a class="dropdown-item" href="#"><img src="./assets/images/flag/ja.png" alt=""> japanese</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -35,7 +45,7 @@
         <div class="container">
             <h1 class="jumbotron-heading title-head text-white">Free online video downloader</h1>
             <div class="row justify-content-center">
-                <div class="col-10">
+                <div class="col-10 col-md-8">
                     <form action="" class="form-download">
                         <div class="input-group mb-3 input-form-download">
                             <input type="text" class="form-control" placeholder="Paste url in here to download !" >
@@ -130,7 +140,7 @@
                     </p>
                 </div>
                 <div class="col-md-8 col-12">
-                    <div class="list-download row-grid grid-xs-3 grid-md-6">
+                    <div class="list-download row-grid grid-xs-4 grid-md-6 gap-2">
                         <div class="type-download">
                             <a href="" class="link">
                                 <img src="./assets/images/icon/a.png" alt="">
@@ -211,45 +221,47 @@
                                 <img src="./assets/images/icon/q.png" alt="">
                             </a>
                         </div>
-                        <div class="type-download">
-                            <a href="" class="link">
-                                <img src="./assets/images/icon/r.png" alt="">
-                            </a>
-                        </div>
-                        <div class="type-download">
-                            <a href="" class="link">
-                                <img src="./assets/images/icon/s.png" alt="">
-                            </a>
-                        </div>
-                        <div class="type-download">
-                            <a href="" class="link">
-                                <img src="./assets/images/icon/t.png" alt="">
-                            </a>
-                        </div>
-                        <div class="type-download">
-                            <a href="" class="link">
-                                <img src="./assets/images/icon/u.png" alt="">
-                            </a>
-                        </div>
-                        <div class="type-download">
-                            <a href="" class="link">
-                                <img src="./assets/images/icon/v.png" alt="">
-                            </a>
-                        </div>
-                        <div class="type-download">
-                            <a href="" class="link">
-                                <img src="./assets/images/icon/w.png" alt="">
-                            </a>
-                        </div>
-                        <div class="type-download">
-                            <a href="" class="link">
-                                <img src="./assets/images/icon/x.png" alt="">
-                            </a>
-                        </div>
-                        <div class="type-download">
-                            <a href="" class="link">
+                        <div class="type-download" id="show-all-icon">
+                            <a href="javascript:void(0)" class="link">
                                 <img src="./assets/images/icon/o.png" alt="">
                             </a>
+                        </div>
+                        <div id="view-less-type" style="display: none;">
+                            <div class="type-download">
+                                <a href="" class="link">
+                                    <img src="./assets/images/icon/r.png" alt="">
+                                </a>
+                            </div>
+                            <div class="type-download">
+                                <a href="" class="link">
+                                    <img src="./assets/images/icon/s.png" alt="">
+                                </a>
+                            </div>
+                            <div class="type-download">
+                                <a href="" class="link">
+                                    <img src="./assets/images/icon/t.png" alt="">
+                                </a>
+                            </div>
+                            <div class="type-download">
+                                <a href="" class="link">
+                                    <img src="./assets/images/icon/u.png" alt="">
+                                </a>
+                            </div>
+                            <div class="type-download">
+                                <a href="" class="link">
+                                    <img src="./assets/images/icon/v.png" alt="">
+                                </a>
+                            </div>
+                            <div class="type-download">
+                                <a href="" class="link">
+                                    <img src="./assets/images/icon/w.png" alt="">
+                                </a>
+                            </div>
+                            <div class="type-download">
+                                <a href="" class="link">
+                                    <img src="./assets/images/icon/x.png" alt="">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -298,13 +310,26 @@
 </footer>
 <script>
     $(window).scroll(function(){
-        if ($(window).scrollTop() >= 300) {
+        if ($(window).scrollTop() >= 250) {
             $('#header .navbar').addClass('active');
         }
         else {
             $('#header .navbar').removeClass('active');
         }
     });
+
+    $('#show-all-icon').click(function() {
+        const htmlInner = $('#view-less-type').html();
+        $(this).find('a').html(`<div class="spinner-border text-primary" role="status"> <span class="sr-only">Loading...</span> </div>`);
+        setTimeout(() => {
+            $(this).hide();
+            $('.list-download').append(htmlInner);
+        }, 2000);
+    });
+
+    $('.btn-download').click(function() {
+        $(this).html(`<div class="spinner-border text-white" role="status"> <span class="sr-only">Loading...</span> </div>`)
+    })
 
 </script>
 <script src="assets/js/source.js"></script>

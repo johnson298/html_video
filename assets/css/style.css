@@ -22,6 +22,7 @@
 .input-form-download .input-group-append {
     position: absolute;
     right: 0;
+    z-index: 999999;
 }
 
 .btn-download {
@@ -165,6 +166,83 @@ ul.list-contact li {
 ul.list-contact li a i {
     color: #000;
 }
+
+.country-flag a.dropdown-item img {
+    width: 30px;
+}
+
+.country-flag a.dropdown-item {
+    padding: 2px 10px;
+}
+
+.country-flag {
+    padding: 10px 0;
+}
+#header .logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+#header .navbar-brand{
+    color: #fff;
+}
+.spinner-border {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 1px rgb(0 123 255 / 50%);
+}
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 776px){
+    .type-download .link {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+    }
+    .type-download img {
+        width: 50px;
+        height: 50px;
+    }
+    .menu-more {
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    .country-flag a.dropdown-item img {
+        width: 25px;
+    }
+
+    .country-flag a.dropdown-item {
+        font-size: 14px;
+    }
+
+    .country-flag {
+        transform: translateX(-50%);
+        left: 50%;
+    }
+}
+
 @media (max-width: 556px) {
     #header .navbar-brand strong {
         font-size: 15px;
